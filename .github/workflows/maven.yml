@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
     - name: Log on DockerHub
-      run: docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
+      run: docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
 
 
 
