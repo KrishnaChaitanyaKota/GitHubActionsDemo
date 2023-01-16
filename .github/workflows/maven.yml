@@ -36,7 +36,7 @@ jobs:
     - name: manual docker build
       run: docker build -t krishnachaitanya/springbootwithgithubactions .
     - name: Logon to Docker
-      run: docker login -u {{ secrets.DOCKER_USERNAME }} -p {{ secrets.DOCKER_PASSWORD }}
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v5  
       with:
