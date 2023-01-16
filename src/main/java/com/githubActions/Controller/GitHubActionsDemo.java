@@ -8,7 +8,7 @@ public class GitHubActionsDemo {
 	
 	@GetMapping("/hello")
 	public String getMessage() {
-		return "Hello KC! $$$";
+		return "Hello KC! $$";
 	}
 
 }
