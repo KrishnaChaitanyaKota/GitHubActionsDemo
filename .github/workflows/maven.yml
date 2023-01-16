@@ -35,11 +35,13 @@ jobs:
       run: docker --version
     - name: manual docker build
       run: docker build -t krishnachaitanya/springbootwithgithubactions .
+    - name: Logon to Docker
+      run: docker login -u {{ secrets.DOCKER_USERNAME }} -p {{ secrets.DOCKER_PASSWORD }}
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v5  
       with:
         image: krishnachaitanya/springbootwithgithubactions
-        tags: latest
+        tags: latestkc
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
