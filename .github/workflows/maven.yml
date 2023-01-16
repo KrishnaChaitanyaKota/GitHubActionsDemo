@@ -33,6 +33,8 @@ jobs:
       run: mvn clean install
     - name: check docker version
       run: docker --version
+    - name: manual docker build
+      run: docker build -t krishnachaitanya/springbootwithgithubactions .
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v5  
       with:
