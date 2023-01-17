@@ -33,6 +33,11 @@ jobs:
       run: mvn clean install
     - name: check docker version
       run: docker --version
+    - name: Set Application Version Variable
+      run: |
+          env
+          export APPLICATION_VERSION="$APPLICATION_NAME-${{ github.sha }}"
+          echo $APPLICATION_VERSION
     - name: manual docker build
       run: docker build -t krishnachaitanya/springbootwithgithubactions .
     # This is not recommeneded use Docker Login existing  action   
