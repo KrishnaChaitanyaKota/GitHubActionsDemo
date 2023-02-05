@@ -25,11 +25,7 @@ jobs:
         run: | 
           java -version
           echo ${{ secrets.APP_NAME }}
-      - name: Add secrets to application.properties
-        run: | 
-          printf ${{ secrets.APP_NAME }} >> src/main/resources/application.properties
-          printf ${{ secrets.SERVER_PORTs }} >> src/main/resources/application.properties
-        shell: bash
+
       - name: Build with Maven
         run: mvn clean install
       - name: check docker version
