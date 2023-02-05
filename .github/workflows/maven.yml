@@ -8,8 +8,8 @@ on:
       - main
   workflow_dispatch:
 env:
-  APP_NAME: ${{secrets.APP_NAME }}
-  SERVER_PORT: ${{secrets.SERVER_PORT }}
+  APP_NAME: ${{secrets.APP_NAME}}
+  SERVER_PORT: ${{secrets.SERVER_PORT}}
 jobs:
   build:
     runs-on: ubuntu-latest
