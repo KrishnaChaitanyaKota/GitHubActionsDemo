@@ -25,7 +25,7 @@ jobs:
       - name: check java Version
         run: | 
           java -version
-          echo ${{ secrets.APP_NAME }}
+          echo "${{ secrets.APP_NAME }}"
       - name: Build with Maven
         run: mvn clean install
       - name: check docker version
